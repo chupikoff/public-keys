@@ -1,14 +1,10 @@
-1. Check OS family:
-    a) redhat;
-    b) debian.
-2. Create user 'hes'
-3. if OS redhat add user 'hes' to group wheel
-    else add user 'hes' to group sudoers
-4. if OS redhat disable selinux
-    sed -i 's/SELINUX=enabled/SELINUX=disabled/' /etc/sysconfig/selinux    
-5. add user 'hes' to sudoers with NOPASSWD
-6. mkdir .ssh in ~hes
-7. download public-key
-8. permissions and owner\group of .ssh and files
-9. configure ssh (password, listen, root)
-    sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+Настройка VPS на CentOS 7 арендованых у Fozzy
+
+1. Добавить пользователя hes
+2. Добавить пользователя hes в группу wheel
+3. Создать директорию /home/hes/.ssh
+4. Загрузить authorized_keys с ключами с macbook и WSL2
+5. Задать права для .ssh и authorized_keys
+6. alias s='sudo su -'
+7. Выключить SELinux
+8. Отконфигурировать ssh (отключить доступ по паролю, отключить рут доступ, листен IP)

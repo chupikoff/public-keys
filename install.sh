@@ -1,7 +1,7 @@
 #!/bin/bash
 useradd hes
 usermod -aG wheel hes
-sed -i 's/SELINUX=enabled/SELINUX=disabled/' /etc/sysconfig/selinux
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/sysconfig/selinux
 echo 'hes        ALL=(ALL)       NOPASSWD: ALL' >> /etc/sudoers
 mkdir /home/hes/.ssh
 wget -P /home/hes/.ssh https://raw.githubusercontent.com/chupikoff/install/main/authorized_keys
